@@ -3,8 +3,9 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <div className="bg-hero bg-cover bg-center bg-no-repeat">
-      <div className="flex flex-col gap-4 items-center justify-center h-screen">
+    <>
+      <div className="bg-hero bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0" />
+      <div className="flex flex-col gap-4 items-center justify-center h-screen z-20 relative">
         <h1 className="text-7xl font-bold text-white">
           Unlock Your Wanderlust
         </h1>
@@ -25,7 +26,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
