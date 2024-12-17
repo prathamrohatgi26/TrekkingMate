@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <>
+    <div className="overflow-hidden relative">
       <div className="bg-hero bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0" />
       <div className="flex flex-col gap-4 items-center justify-center h-screen z-20 relative">
         <h1 className="text-7xl font-bold text-white">
@@ -20,13 +20,13 @@ const Hero = () => {
           />
           <Button
             variant="default"
-            className=" bg-main text-white font-medium hover:bg-mainhover absolute top-1/2 right-4 transform -translate-y-1/2 text-lg w-[120px] h-[48px] rounded-[120px] p-2"
+            className="absolute top-1/2 right-4 transform -translate-y-1/2 text-lg w-[120px] h-[48px] rounded-[120px] p-2"
           >
             Search
           </Button>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

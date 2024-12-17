@@ -11,6 +11,7 @@ export default {
     extend: {
       backgroundImage: {
         hero: "url('/images/Hero.png')",
+        activities: "url('/images/joinplease.png')",
       },
       colors: {
         main: "#00b2ff",
