@@ -25,6 +25,7 @@ const FAQs = () => {
         >
           {Array.from({ length: 4 }).map((_, index) => (
             <AccordionItem
+              key={index}
               value={`item-${index}`}
               className="border-white/[.12]"
             >
