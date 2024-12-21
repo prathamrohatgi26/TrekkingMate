@@ -21,7 +21,6 @@ export default function Home() {
       <FeaturedTrek />
       <InstaGrid />
       <FAQs />
-      <Footer />
     </>
   );
 }
