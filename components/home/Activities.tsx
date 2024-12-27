@@ -40,7 +40,7 @@ const Activities = () => {
     }
   };
   return (
-    <div className="h-screen bg-black flex flex-col items-center py-20">
+    <div className="h-screen bg-[#121212] flex flex-col items-center py-20">
       <SectionHeading
         title="activities we offer"
         subtitle="Unleash the Explorer in You"
@@ -81,7 +81,7 @@ const Activities = () => {
                   className="object-cover h-full w-full hover:scale-105 transition-all duration-300"
                 />
               </div>
-              <div className=" text-white h-[150px] flex flex-col gap-1 bg-[#0f0f0f] w-full px-4 py-6">
+              <div className=" text-white h-[150px] flex flex-col gap-1 bg-[#202020] w-full px-4 py-6">
                 <h3 className="text-xl font-bold ">{item.title}</h3>
                 <p className="">{item.desc}</p>
                 <button className="text-main text-sm self-start border-b-2 border-transparent border-solid hover:border-b-main transition-all duration-300">

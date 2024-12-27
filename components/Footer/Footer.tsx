@@ -15,7 +15,7 @@ const Footer = () => (
       />
       <Button className="rounded-2xl scale-125 px-6">Plan Now</Button>
     </div>
-    <div className="h-[45vh] flex flex-col py-14 bg-[#2A4F68] px-[12%]">
+    <div className="h-[45vh] flex flex-col py-14 bg-[#121212] px-[12%]">
       <div className="flex items-start justify-between gap-10 pb-6 border-b border-white/[.24]">
         <div className="flex flex-col gap-1">
           <Image

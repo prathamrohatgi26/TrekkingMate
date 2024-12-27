@@ -9,7 +9,7 @@ import {
 
 const FAQs = () => {
   return (
-    <div className=" bg-black flex flex-col items-center py-20">
+    <div className=" bg-[#121212] flex flex-col items-center py-20">
       <SectionHeading
         title="FAQs"
         subtitle="Journeys Shared, Stories Told"

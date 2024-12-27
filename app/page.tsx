@@ -4,7 +4,6 @@ import Activities from "@/components/home/Activities";
 import Blogs from "@/components/home/Blogs";
 import WhyUs from "@/components/home/WhyUs";
 import Reviews from "@/components/home/Reviews";
-import Footer from "@/components/Footer/Footer";
 import FAQs from "@/components/home/FAQs";
 import InstaGrid from "@/components/home/InstaGrid";
 import FeaturedTrek from "@/components/home/FeaturedTrek";

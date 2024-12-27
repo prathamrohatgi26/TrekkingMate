@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <div className="overflow-hidden relative">
+    <section className="overflow-hidden relative">
       <div className="bg-hero bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0" />
       <div className="flex flex-col gap-4 items-center justify-center h-screen z-20 relative">
         <h1 className="text-7xl font-bold text-white">
@@ -26,7 +26,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

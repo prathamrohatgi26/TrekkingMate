@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 const Navbar = () => {
   return (
-    <header className="bg-black h-[72px] absolute top-0 left-0 right-0 z-50">
+    <header className="bg-[#121212] h-[72px] absolute top-0 left-0 right-0 z-50">
       <div className="flex justify-between items-center h-full mx-[12%]">
         <Image src="/images/White-logo.png" alt="logo" width={76} height={48} />
         <div className="flex items-center gap-4">
@@ -20,7 +20,7 @@ const Navbar = () => {
           </Button>
           <Button
             variant="outline"
-            className="rounded-2xl text-white outline-white bg-black font-medium text-lg"
+            className="rounded-2xl text-white outline-white bg-transparent font-medium text-lg"
           >
             +977 9876543210
           </Button>
