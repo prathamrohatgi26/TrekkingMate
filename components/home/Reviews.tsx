@@ -30,7 +30,19 @@ const Reviews = () => {
         TripAdvisor
       </span>
 
-      <div className="w-3/4 my-10 relative h-full">
+      <span className="flex items-center text-black underline text-sm mt-2 font-medium">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <span
+            key={index}
+            className={`size-[10px] bg-[#00aa6c] flex-shrink-0 rounded-full ${
+              index === 4 ? "mr-1 " : "mr-0.5"
+            }`}
+          />
+        ))}
+        2622 reviews in TripAdvisor
+      </span>
+
+      <div className="w-3/4 my-6 relative h-full">
         {/* review slider */}
         <Carousel
           opts={{
