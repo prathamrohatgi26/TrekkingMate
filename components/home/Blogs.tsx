@@ -55,9 +55,12 @@ const Blogs = ({ blogData }: any) => {
               <p className="text-white text-lg font-semibold">
                 {blog.description}
               </p>
-              <button className="text-main border-b-2 border-transparent border-solid group-hover:border-b-main transition-all duration-300">
+              <a
+                href="/blogs/random"
+                className="text-main border-b-2 border-transparent border-solid group-hover:border-b-main transition-all duration-300"
+              >
                 Read More
-              </button>
+              </a>
             </span>
           </div>
         ))}

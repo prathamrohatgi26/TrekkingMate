@@ -27,7 +27,7 @@ const Navbar = () => {
     },
   ];
   return (
-    <header className="bg-black absolute top-0 left-0 right-0 z-50 w-full">
+    <header className="bg-[#121212] absolute top-0 left-0 right-0 z-50 w-full">
       <div className="flex justify-between items-center mx-[20px] sm:mx-[12%] h-[72px]">
         <Image src="/images/White-logo.png" alt="logo" width={76} height={48} />
         <div className=" hidden sm:flex items-center gap-4">
@@ -69,7 +69,7 @@ const Navbar = () => {
       {showMobileDropdown && (
         <div className="w-full flex flex-col items-start">
           <button
-            className="h-12 bg-black text-white text-sm font-medium p-2 w-full text-start px-5 flex items-center justify-between"
+            className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5 flex items-center justify-between"
             onClick={() => setShowMobileOfferings(!showMobileOfferings)}
           >
             Offerings
@@ -88,10 +88,10 @@ const Navbar = () => {
               ))}
             </>
           )}
-          <button className="h-12 bg-black text-white text-sm font-medium p-2 w-full text-start px-5">
+          <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
             Why Us?
           </button>
-          <button className="h-12 bg-black text-white text-sm font-medium p-2 w-full text-start px-5">
+          <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
             About Us
           </button>
         </div>
