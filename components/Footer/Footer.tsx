@@ -7,7 +7,7 @@ import { Mail, Phone } from "lucide-react";
 
 const Footer = () => (
   <>
-    <div className="h-[75vh] flex flex-col items-center py-14 bg-footer bg-center bg-cover bg-no-repeat gap-8">
+    <div className="h-[45vh] w-screen sm:h-[75vh] flex flex-col items-center py-14 sm:px-0 px-10 bg-footer sm:bg-center bg-contain bg-white bg-bottom sm:bg-cover bg-no-repeat gap-8">
       <SectionHeading
         title=""
         subtitle="Explore Beyond Limits, Start Your Adventure!"
@@ -15,8 +15,8 @@ const Footer = () => (
       />
       <Button className="rounded-2xl scale-125 px-6">Plan Now</Button>
     </div>
-    <div className="h-[45vh] flex flex-col py-14 bg-[#121212] px-[12%]">
-      <div className="flex items-start justify-between gap-10 pb-6 border-b border-white/[.24]">
+    <div className="h-[60vh] sm:h-[45vh] flex flex-col py-14 bg-[#121212] px-[12%]">
+      <div className="flex flex-col sm:flex-row items-start justify-between gap-10 pb-6 border-b border-white/[.24]">
         <div className="flex flex-col gap-1">
           <Image
             src="/images/White-logo.png"
@@ -46,13 +46,13 @@ const Footer = () => (
         </div>
       </div>
       <div className="flex items-center justify-between pt-6">
-        <p className="text-white/[.6]">
+        <p className="text-white/[.6] text-sm sm:text-base">
           Copyright Ⓒ 2024 Trekking Mate. All rights reserved.
         </p>
         <Button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           variant="outline"
-          className="text-white rounded-2xl px-6 py-3 font-medium border-[1.5px]"
+          className="text-white rounded-2xl px-6 py-3 font-medium border-[1.5px] hidden sm:flex"
         >
           Back to top
         </Button>

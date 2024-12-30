@@ -46,29 +46,35 @@ const Activities = ({ tourData }: any) => {
         variant="black"
       />
 
-      <div className="w-full h-full flex items-center justify-center gap-8 mt-10 relative">
-        <Carousel className="w-full">
+      <div className="w-screen h-full flex items-center justify-center gap-8 mt-10 relative">
+        <button
+          onClick={() => moveSlider("left")}
+          className="absolute z-40 text-white left-2 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:hidden"
+        >
+          <ArrowLeft />
+        </button>
+
+        <button
+          onClick={() => moveSlider("right")}
+          className="absolute z-40 text-white right-2 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:hidden"
+        >
+          <ArrowRight />
+        </button>
+        <Carousel className="w-full overflow-clip">
           <CarouselContent className="w-full flex flex-row justify-center items-center">
             {SliderItems.map((item, index) => (
               <CarouselItem
                 key={index}
-                className={` relative cursor-pointer basis-1/3 ${
+                className={` relative cursor-pointer sm:basis-1/3 ${
                   index === 1
-                    ? "max-w-[400px] max-h-[550px] h-[550px] w-[30%]"
+                    ? "max-w-[80%] sm:max-w-[400px] max-h-[550px] h-[550px] w-[30%]"
                     : "max-w-[320px] max-h-[450px] h-[450px] w-[25%]"
                 }`}
               >
-                {/* <div
-                  className={` relative cursor-pointer ${
-                    index === 1
-                      ? "max-w-[400px] max-h-[550px] h-[550px] w-[30%]"
-                      : "max-w-[320px] max-h-[450px] h-[450px] w-[25%]"
-                  }`}
-                > */}
                 {index === 0 && (
                   <button
                     onClick={() => moveSlider("left")}
-                    className="absolute isolate z-40 text-white -left-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2"
+                    className="absolute z-40 text-white -left-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:flex hidden"
                   >
                     <ArrowLeft />
                   </button>
@@ -76,7 +82,7 @@ const Activities = ({ tourData }: any) => {
                 {index === 2 && (
                   <button
                     onClick={() => moveSlider("right")}
-                    className="absolute z-40 text-white -right-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2"
+                    className="absolute z-40 text-white -right-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:flex hidden"
                   >
                     <ArrowRight />
                   </button>

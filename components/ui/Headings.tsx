@@ -13,7 +13,7 @@ export const SectionHeading: React.FC<SectionHeading> = ({
     <>
       <p className="text-main text-sm font-medium ">{title.toUpperCase()}</p>
       <p
-        className={`text-5xl font-semibold mt-1 ${
+        className={`text-2xl sm:text-5xl font-semibold mt-1 text-center ${
           variant === "white" ? "text-black" : "text-white"
         }`}
       >

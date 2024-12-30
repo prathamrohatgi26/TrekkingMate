@@ -16,7 +16,7 @@ const FAQs = () => {
         variant="black"
       />
 
-      <div className="w-[66%] py-10">
+      <div className="w-[90%] sm:w-[66%] py-10">
         <Accordion
           type="single"
           collapsible
@@ -29,10 +29,10 @@ const FAQs = () => {
               value={`item-${index}`}
               className="border-white/[.12]"
             >
-              <AccordionTrigger className="text-white font-semibold text-xl">
+              <AccordionTrigger className="text-white font-semibold text-lg sm:text-xl">
                 What is Lorem Ipsum?
               </AccordionTrigger>
-              <AccordionContent className="text-white/[.6] text-base font-normal">
+              <AccordionContent className="text-white/[.6] text-sm sm:text-base font-normal">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s.

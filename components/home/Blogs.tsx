@@ -28,18 +28,18 @@ const Blogs = ({ blogData }: any) => {
   ];
 
   return (
-    <div className="h-screen bg-white flex flex-col items-center py-20">
+    <div className="sm:h-screen bg-white flex flex-col items-center py-20">
       <SectionHeading
         title="blog"
         subtitle="Stories That Inspire Your Next Journey"
         variant="white"
       />
 
-      <div className="flex items-center justify-center gap-10 mt-10">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-10">
         {blogs.map((blog, index) => (
           <div
             key={index}
-            className="bg-white flex flex-col items-center justify-center gap-2 w-[30%] h-[500px] rounded-xl overflow-hidden relative group"
+            className="bg-white flex flex-col items-center justify-center gap-2 w-[90%] sm:w-[30%] h-[500px] rounded-xl overflow-hidden relative group"
           >
             <Image
               src={blog.image}

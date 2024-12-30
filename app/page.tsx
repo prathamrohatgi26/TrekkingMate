@@ -31,10 +31,10 @@ export default async function Home() {
         heading={res?.data?.whyUsHeading}
         content={res?.data?.whyUsContent}
       />
-      <Blogs blogData={blogRes.data} />
       <Activities tourData={tourTypes?.tours} />
-      <Reviews />
+      <Blogs blogData={blogRes.data} />
       <FeaturedTrek />
+      <Reviews />
       <InstaGrid />
       <FAQs />
     </>
