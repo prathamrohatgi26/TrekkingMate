@@ -10,12 +10,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 const Activities = ({ tourData }: any) => {
-  console.log("activitires data", tourData);
-
   const [SliderItems, setSliderItems] = useState([
     {
-      image: Slider2,
-      title: "Expedition",
+      image: Slider3,
+      title: "Trekking",
       desc: "Starting from USD 2210/Person",
       link: "",
     },
@@ -26,8 +24,8 @@ const Activities = ({ tourData }: any) => {
       link: "",
     },
     {
-      image: Slider3,
-      title: "Trekking",
+      image: Slider2,
+      title: "Expedition",
       desc: "Starting from USD 2210/Person",
       link: "",
     },
