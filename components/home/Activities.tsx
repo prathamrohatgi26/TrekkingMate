@@ -9,7 +9,9 @@ import Slider3 from "/public/images/slider3.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
-const Activities = () => {
+const Activities = ({ tourData }: any) => {
+  console.log("activitires data", tourData);
+
   const [SliderItems, setSliderItems] = useState([
     {
       image: Slider2,

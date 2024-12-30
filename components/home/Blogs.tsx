@@ -4,7 +4,7 @@ import Blog2 from "/public/images/blog2.png";
 import Blog3 from "/public/images/blog3.png";
 import Image from "next/image";
 import { SectionHeading } from "../ui/Headings";
-const Blogs = () => {
+const Blogs = ({ blogData }: any) => {
   const blogs = [
     {
       title: "The Ultimate Guide to Trekking in the Himalayas",

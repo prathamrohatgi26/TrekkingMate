@@ -1,16 +1,17 @@
 import React from "react";
 import { Button } from "../ui/button";
 
-const Hero = () => {
+const Hero = ({ res }: any) => {
   return (
     <section className="overflow-hidden relative">
       <div className="bg-hero bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0" />
       <div className="flex flex-col gap-4 items-center justify-center h-screen z-20 relative">
         <h1 className="text-7xl font-bold text-white">
-          Unlock Your Wanderlust
+          {res?.heroHeading ?? "Unlock Your Wanderlust"}
         </h1>
         <p className="text-2xl text-white">
-          Discover destinations that inspire and experiences that excite
+          {res?.heroSubHeading ??
+            "Discover destinations that inspire and experiences that excite"}
         </p>
         <div className="relative w-1/2 flex justify-center items-center mt-6">
           <input

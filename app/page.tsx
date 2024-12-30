@@ -8,14 +8,31 @@ import FAQs from "@/components/home/FAQs";
 import InstaGrid from "@/components/home/InstaGrid";
 import FeaturedTrek from "@/components/home/FeaturedTrek";
 
-export default function Home() {
+export default async function Home() {
+  const [homepageData, blogData, tourData] = await Promise.all([
+    fetch("https://trekking-mate-services.onrender.com/api/homepage"),
+    fetch(
+      "https://trekking-mate-services.onrender.com/api/blogs?populate=image&sort=createdAt:desc"
+    ),
+    fetch("https://trekking-mate-services.onrender.com/api/tour-types"),
+  ]);
+
+  const [res, blogRes, tourTypes] = await Promise.all([
+    homepageData.json(),
+    blogData.json(),
+    tourData.json(),
+  ]);
+
   return (
     <>
-      <Hero />
-      <KPIs />
-      <WhyUs />
-      <Blogs />
-      <Activities />
+      <Hero res={res?.data} />
+      <KPIs res={res?.data?.metrics} />
+      <WhyUs
+        heading={res?.data?.whyUsHeading}
+        content={res?.data?.whyUsContent}
+      />
+      <Blogs blogData={blogRes.data} />
+      <Activities tourData={tourTypes?.tours} />
       <Reviews />
       <FeaturedTrek />
       <InstaGrid />
