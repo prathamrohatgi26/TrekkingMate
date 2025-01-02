@@ -5,7 +5,7 @@ import React from "react";
 const TripHeading = () => {
   return (
     <div className="pt-20 pb-10 bg-white">
-      <div className="grid grid-cols-12 grid-rows-5 gap-x-2 gap-y-3 h-[400px] max-w-[1200px] mx-auto my-6">
+      <div className="hidden sm:grid grid-cols-12 grid-rows-5 gap-x-2 gap-y-3 h-[400px] max-w-[1200px] mx-auto my-6">
         <span className="flex items-center justify-center overflow-hidden col-span-6 row-span-5 rounded-l-lg">
           <Image
             alt="grid-trips-1"
@@ -60,6 +60,15 @@ const TripHeading = () => {
             className="object-cover w-full h-full"
           />
         </span>
+      </div>
+      <div className="flex items-center justify-center sm:hidden relative">
+        <Image
+          src={"/images/1.png"}
+          alt="mobile-v"
+          className="h-full w-full"
+          width={400}
+          height={300}
+        />
       </div>
       <div className="flex flex-col gap-2 max-w-[1200px] mx-auto mt-6">
         <span className="flex flex-row items-start justify-between">

@@ -98,7 +98,12 @@ const Activities = ({ tourData }: any) => {
                   <div className=" text-white h-[150px] flex flex-col gap-1 bg-[#202020] w-full px-4 py-6">
                     <h3 className="text-xl font-bold ">{item.title}</h3>
                     <p className="">{item.desc}</p>
-                    <button className="text-main text-sm self-start border-b-2 border-transparent border-solid hover:border-b-main transition-all duration-300">
+                    <button
+                      onClick={() =>
+                        (window.location.href = "/tripDetails/random")
+                      }
+                      className="text-main text-sm self-start border-b-2 border-transparent border-solid hover:border-b-main transition-all duration-300"
+                    >
                       Know More
                     </button>
                   </div>
