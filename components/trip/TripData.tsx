@@ -4,7 +4,7 @@ import TripContent from "./TripContent";
 
 const TripData = () => {
   return (
-    <div>
+    <div className="bg-white">
       <TripHeading />
       <TripContent />
     </div>
