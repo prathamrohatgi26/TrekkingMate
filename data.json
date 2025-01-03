@@ -1,0 +1,66 @@
+{
+  "data": [
+    {
+      "id": 14,
+      "documentId": "fyr2fg4l8ugmx87gyurneh35",
+      "name": "testing 3-1",
+      "price": "20",
+      "description": "aaaaaaa",
+      "createdAt": "2024-12-17T09:18:17.933Z",
+      "updatedAt": "2024-12-17T09:18:25.931Z",
+      "publishedAt": "2024-12-17T09:18:25.937Z",
+      "type": {
+        "id": 9,
+        "documentId": "fro80yn1dt2t5s0tr80eldrt",
+        "name": "Trekking",
+        "createdAt": "2024-12-17T09:15:35.383Z",
+        "updatedAt": "2024-12-31T19:35:23.907Z",
+        "publishedAt": "2024-12-31T19:35:24.628Z"
+      }
+    },
+    {
+      "id": 19,
+      "documentId": "eszfu0fqv8wh1sfk3ynqsgs3",
+      "name": "Everest Base Camp",
+      "price": "0",
+      "description": "![EBC_05.jpg](https://trekking-mate-services.onrender.com/uploads/EBC_05_24adaa4ca2.jpg)\n![EBC_03.jpg](https://trekking-mate-services.onrender.com/uploads/EBC_03_f361ef5783.jpg)\n![EBC_04.jpg](https://trekking-mate-services.onrender.com/uploads/EBC_04_7b76eacaa1.jpg)\n![EBC_01.jpg](https://trekking-mate-services.onrender.com/uploads/EBC_01_e46eff0a9f.jpg)\n![EBC_02.jpg](https://trekking-mate-services.onrender.com/uploads/EBC_02_c5399be7e6.jpg)\n\n\nEverest Base Camp | 16 days\n\n#Trip Introduction\nThe Everest Base Camp Trek is a legendary journey through the Himalayas, leading you closer to the world’s highest peak. Passing Sherpa villages, suspension bridges, and prayer flag-lined trails, the towering Everest dominates the landscape.\n\nThe trek through the Khumbu Valley offers breathtaking views of peaks like Lhotse, Nuptse, and Ama Dablam. At sunrise, Kala Patthar reveals Everest glowing in golden light, a truly unforgettable sight. Reaching Base Camp, surrounded by majestic snow-capped peaks, is a humbling and awe-inspiring experience. This trek is a true adventure and a tribute to human endurance and spirit.\n\n#Trek Highlights\n- Journey to Everest Base Camp: Trek to the foot of the world’s tallest peak.\n- Scenic Flight: Enjoy stunning aerial views of the Himalayas en route to Lukla.\n- Sagarmatha National Park: Explore its rich wilderness and natural beauty.\n- Namche Bazaar: Discover the vibrant gateway to Everest and its Sherpa culture.\n- Sherpa Traditions: Immerse in the heritage and lifestyle of the local community.\n- Hotel Everest View: Marvel at the mountains from the world’s highest-altitude hotel.\n- Tengboche Monastery: Visit the region’s oldest and most iconic monastery.\n- Khumbu Glacier & Icefall: Witness these legendary icy marvels.\n- Kala Patthar & Nangkartshang Peak: Trek to these stunning viewpoints for breathtaking panoramas.\n- Himalayan Giants: Take in majestic views of Everest, Ama Dablam, Lhotse, Nuptse, Cho Oyu, and more.\n\n#Short Itinerary\nDay 1: Arrival in Kathmandu |1,350 m | Welcome dinner\nDay 2: Kathmandu sightseeing and trek preparation\nDay 3: Fly from Kathmandu to Lukla |2,840 m | and trek to Phakding | 2,652 m | 3-4 hrs\nDay 4: Trek from Phakding to Namche Bazaar | 3,440 m | 7-8 hrs.\nDay 5: Acclimatization day at Namche\nDay 6: Trek from Namche Bazaar to Debouche | 3,770 m | 6-7 hrs.\nDay 7: Trek from Tengboche to Dingboche | 4,410 m | 6 hrs.\nDay 8: Acclimatization at Dingboche\nDay 9: Trek from Dingboche to Lobuche | 4,910 m | 5-6 hrs.\nDay 10: Trek from Lobuche to Gorakshep | 5,140 m | & Visit Everest Base camp | 5,364 m | 8-9 hrs.\nDay 11: Hike up to Kalapatthar |5,550m| & Trek to Pheriche | 4,240m | 8 hrs.\nDay 12: Trek down to Namche Bazaar | 3,440 m | 7-8 hrs.\nDay 13: Trek from Namche to Lukla | 2,840 m | 7-8 hrs.\nDay 14: Flight from Lukla to Kathmandu | 1,300 m | 30 mins\nDay 15: Spare day (Roam around Kathmandu)\nDay 16: Departure\n",
+      "createdAt": "2024-12-17T09:14:59.740Z",
+      "updatedAt": "2024-12-31T16:48:22.436Z",
+      "publishedAt": "2024-12-31T16:48:22.929Z",
+      "type": {
+        "id": 9,
+        "documentId": "fro80yn1dt2t5s0tr80eldrt",
+        "name": "Trekking",
+        "createdAt": "2024-12-17T09:15:35.383Z",
+        "updatedAt": "2024-12-31T19:35:23.907Z",
+        "publishedAt": "2024-12-31T19:35:24.628Z"
+      }
+    },
+    {
+      "id": 21,
+      "documentId": "l7ycc9fh7dl5p8o119j4twvw",
+      "name": "Annapurna Base Camp",
+      "price": "0",
+      "description": "![ABC_03.jpg](https://trekking-mate-services.onrender.com/uploads/ABC_03_c5ecf6e009.jpg)\n![ABC_02.jpg](https://trekking-mate-services.onrender.com/uploads/ABC_02_5df13f7f56.jpg)\n![ABC_04.jpg](https://trekking-mate-services.onrender.com/uploads/ABC_04_14a8f798b5.jpg)\n![ABC_05.jpg](https://trekking-mate-services.onrender.com/uploads/ABC_05_8b0f517342.jpg)\n![ABC_01.jpg](https://trekking-mate-services.onrender.com/uploads/ABC_01_1a8332a4cc.jpg)\n\nAnnapurna Base Camp | 13 Days\n\n#Trip Introduction\nThe Annapurna Base Camp Trek is a spellbinding journey into Nepal's majestic mountain landscapes. As you trek through terraced fields, vibrant rhododendron forests, and traditional Gurung villages, the towering Annapurna peaks come into view, drawing you closer with every step.\n\nFollowing the serene Modi Khola Valley, filled with the soothing sounds of rivers and the fresh aroma of pine, the trail leads to the sacred Annapurna Base Camp. Surrounded by snow-capped giants, this natural amphitheater glows with golden hues at sunrise, creating an unforgettable experience. This trek is a perfect blend of natural beauty, cultural richness, and spiritual tranquility in the heart of the Himalayas.\n\n#Highlights\n- Majestic Sanctuary: Step into the natural amphitheater of Annapurna Base Camp, encircled by the towering Annapurna massif.\n- Sunrise Glory: Experience the magical golden hues of sunrise over the snow-capped peaks, including Dhaulagiri I and Annapurna I.\n- Diverse Landscapes: Trek through lush rhododendron forests, terraced fields, and alpine meadows, each offering unique natural beauty.\n- Cultural Encounters: Immerse yourself in the traditions and hospitality of Gurung villages.\n- Poon Hill Views: Enjoy panoramic views of the Himalayas from this iconic vantage point.\n- Wilderness Adventure: Discover varied flora and fauna as you journey through pristine wilderness.\n- Glacier Vistas: Be captivated by spellbinding views of glaciers and mountains from the Base Camp.\n- Hot Springs at Jhinu: Unwind with a soothing soak in natural hot springs after your trek.\n\n\n#Short Itinerary\nDay 1: Arrival in Kathmandu (1350m)\nDay 2: Fly to Pokhara (820m) and Explore Pokhara\nDay 3: Drive to Ulleri and Hike to Ghorepani (2850m)\nDay 4: Hike to Poon Hill (3210m) and Trek to Tadapani (2610m)\nDay 5: Trek from Tadapani to Chhomrong (2170m)\nDay 6: Trek from Chhomrong to Dovan (2600m)\nDay 7: Trek from Dovan to Machhapuchhre Base Camp (3700m)\nDay 8: Trek from Machhapuchhre Base Camp to Annapurna Base Camp (4130m)\nDay 9: Trek back from Annapurna Base Camp to Bamboo (2310m)\nDay 10: Trek from Bamboo to Jhinu Danda (1780m)\nDay 11: Trek from Jhinu Danda to Nayapul and Drive to Pokhara\nDay 12: Fly Back to Kathmandu\nDay 13: Departure from Kathmandu",
+      "createdAt": "2024-12-17T09:17:23.568Z",
+      "updatedAt": "2024-12-31T17:18:45.667Z",
+      "publishedAt": "2024-12-31T17:18:46.178Z",
+      "type": {
+        "id": 9,
+        "documentId": "fro80yn1dt2t5s0tr80eldrt",
+        "name": "Trekking",
+        "createdAt": "2024-12-17T09:15:35.383Z",
+        "updatedAt": "2024-12-31T19:35:23.907Z",
+        "publishedAt": "2024-12-31T19:35:24.628Z"
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 3
+    }
+  }
+}

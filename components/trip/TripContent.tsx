@@ -16,7 +16,19 @@ import {
 const TripContent = () => {
   const [date, setDate] = React.useState<DateRange | undefined>();
   return (
-    <div className="bg-white max-w-[1200px] mx-auto flex flex-row items-start gap-2 relative pb-20">
+    <div className="bg-white max-w-[1200px] mx-auto flex flex-row items-start gap-2 relative pb-20 ">
+      <div
+        className="fixed bottom-0 left-0 bg-white rouned-t-md h-[80px] sm:hidden flex items-center justify-between w-full px-5 rounded-t-xl z-50"
+        style={{ boxShadow: "0px 0px 12px 0px #00000029" }}
+      >
+        <span className="flex flex-col gap-1 text-[#121212]">
+          <p className="text-base font-bold">USD 2250</p>
+          <p className="text-sm">per person</p>
+        </span>
+        <Button className="rounded-2xl px-5 py-3 font-medium w-[250px]">
+          Book Now
+        </Button>
+      </div>
       <div className=" w-full px-4 sm:px-0 sm:w-3/4 h-full text-[#121212] flex flex-col gap-2">
         <h2 className="font-semibold text-2xl sm:text-3xl py-2">Overview</h2>
         <p>
@@ -134,6 +146,17 @@ const TripContent = () => {
         <span className="flex items-center gap-2">
           <span className="size-[20px] rounded-full flex-shrink-0 bg-[#D9D9D9]" />
           Sold out dates
+        </span>
+        <span className="sm:hidden flex h-auto mx-auto my-4 bg-[#00B2FF29] rounded-md flex-col p-5 gap-4">
+          <p className="text-[#121212] font-semibold text-xl">
+            See What Awaits You
+          </p>
+          <p className="text-[#121212] text-sm">
+            Get all the details you need to make your dream trip a reality
+          </p>
+          <button className="w-full rounded-2xl border-[1.5px] border-[#121212] border-solid py-1 text-lg font-medium">
+            Download Brochure
+          </button>
         </span>
         <h2 className="font-semibold text-3xl my-2">
           Journeys Shared, Stories Told

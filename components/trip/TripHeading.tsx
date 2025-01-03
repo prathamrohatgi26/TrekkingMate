@@ -1,10 +1,29 @@
-import { Heart, Share, Star, StarHalf, ThumbsUp } from "lucide-react";
+"use client";
+import {
+  Eye,
+  Heart,
+  ImageIcon,
+  Share,
+  Star,
+  StarHalf,
+  ThumbsUp,
+} from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { DialogTitle } from "@radix-ui/react-dialog";
 
 const TripHeading = () => {
+  const [selectedImage, setSelectedImage] = useState("/images/1.png");
+  const images = [
+    "/images/1.png",
+    "/images/2.png",
+    "/images/3.png",
+    "/images/4.png",
+    "/images/5.png",
+  ];
   return (
-    <div className="pt-20 pb-10 bg-white">
+    <div className="pt-16 sm:pt-20 pb-10 bg-white">
       <div className="hidden sm:grid grid-cols-12 grid-rows-5 gap-x-2 gap-y-3 h-[400px] max-w-[1200px] mx-auto my-6">
         <span className="flex items-center justify-center overflow-hidden col-span-6 row-span-5 rounded-l-lg">
           <Image
@@ -52,30 +71,88 @@ const TripHeading = () => {
           />
         </span>
         <span className="flex items-center justify-center overflow-hidden col-span-2 row-span-2 rounded-br-lg">
-          <Image
-            alt="grid-trips-6"
-            src="/images/6.png"
-            width={170}
-            height={140}
-            className="object-cover w-full h-full"
-          />
+          <Dialog>
+            <DialogTrigger className="h-full w-full">
+              <Image
+                alt="grid-trips-6"
+                src="/images/6.png"
+                width={170}
+                height={140}
+                className="object-cover w-full h-full"
+              />
+            </DialogTrigger>
+            <DialogContent className="bg-transparent flex flex-col gap-2 items-center justify-center border-none w-[80vw] max-w-[80vw] min-h-[60vh]">
+              <DialogTitle>Gallery</DialogTitle>
+              <div className="w-full h-full flex items-center justify-center">
+                {selectedImage && (
+                  <Image
+                    src={selectedImage}
+                    alt={"main"}
+                    height={500}
+                    width={600}
+                    className="w-full object-contain h-auto max-h-[60vh]"
+                  />
+                )}
+              </div>
+              <div className="flex items-center gap-2 justify-center">
+                {images.map((item: string, index: number) => (
+                  <button
+                    onClick={() => setSelectedImage(item)}
+                    className={`w-full h-full rounded-md relative ${
+                      selectedImage === item
+                        ? " border-2 border-main border-solid overflow-clip"
+                        : ""
+                    }`}
+                    key={index}
+                  >
+                    {selectedImage === item && (
+                      <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 text-white">
+                        <Eye />
+                      </span>
+                    )}
+
+                    <Image
+                      src={item}
+                      alt="thumbnails"
+                      width={250}
+                      height={150}
+                      className={`h-[120px] w-[200px] ${
+                        selectedImage === item && "blur"
+                      }`}
+                    />
+                  </button>
+                ))}
+              </div>
+            </DialogContent>
+          </Dialog>
         </span>
       </div>
       <div className="flex items-center justify-center sm:hidden relative">
         <Image
           src={"/images/1.png"}
           alt="mobile-v"
-          className="h-full w-full"
+          className="h-full w-full max-h-[300px] aspect-square object-cover"
           width={400}
           height={300}
         />
+
+        <span className="size-[32px] rounded-full bg-white text-[#121212] absolute top-4 right-4 grid place-items-center">
+          <Heart size={20} />
+        </span>
+        <span className="size-[32px] rounded-full bg-white text-[#121212] absolute top-4 right-14 grid place-items-center">
+          <Share size={20} />
+        </span>
+        <span className="absolute bottom-4 right-4 text-[#121212] bg-white rounded-sm px-2 py-1 h-[32px] w-[64px] text-sm flex items-center gap-1">
+          <ImageIcon size={18} className="flex-shrink-0" />{" "}
+          <p className="flex items-center">1/24</p>
+        </span>
       </div>
-      <div className="flex flex-col gap-2 max-w-[1200px] mx-auto mt-6">
+      <div className="flex flex-col gap-2 max-w-[1200px] mx-auto mt-6 px-3 sm:p-0">
         <span className="flex flex-row items-start justify-between">
-          <h1 className="font-bold text-5xl text-[#121212]">
+          <h1 className="font-bold text-2xl sm:text-5xl text-[#121212]">
             Everest Base Camp Heli Trek - 8 Days
           </h1>
-          <span className="flex items-center gap-6">
+          <span className="hidden sm:flex items-center gap-6">
             <button className="flex items-center gap-2 font-medium text-[#121212]">
               <Share size={20} />
               <p className="underline">Share</p>
@@ -86,7 +163,7 @@ const TripHeading = () => {
             </button>
           </span>
         </span>
-        <span className="flex items-center gap-4">
+        <span className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mt-2 sm:mt-0">
           <span className="flex items-center gap-1 text-[#121212]">
             <Star size={16} />
             <Star size={16} />

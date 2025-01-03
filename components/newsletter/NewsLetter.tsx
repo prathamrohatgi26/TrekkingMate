@@ -7,7 +7,7 @@ const NewsLetter = () => {
       <p className="text-3xl sm:text-5xl text-white font-semibold text-center">
         Stay Updated with the Adventure!
       </p>
-      <div className="relative w-[90%] sm:min-w-[540px] h-[56px] flex flex-col gap-6 sm:gap-0 items-center justify-center">
+      <div className="relative w-[90%] sm:max-w-[540px] h-[56px] flex flex-col gap-6 sm:gap-0 items-center justify-center">
         <input
           type="text"
           placeholder="type your email address..."

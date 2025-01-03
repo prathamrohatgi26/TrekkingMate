@@ -21,14 +21,14 @@ const WhyUs = ({ heading, content }: any) => {
           },
         ];
   return (
-    <section className="h-[150vh] sm:h-screen bg-white flex flex-col bg-activities bg-fixed bg-center bg-no-repeat">
+    <section className="h-[150vh] sm:h-[110vh] bg-white flex flex-col bg-activities bg-fixed bg-center bg-no-repeat">
       <div className="flex flex-col items-center justify-center gap-2 sm:max-h-[500px] py-10 bg-white">
         <SectionHeading
           title="why us"
           subtitle={heading ?? "What Makes Us Different"}
           variant="white"
         />
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-10 p-2">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 my-10 p-2">
           {cardContent.map((card: any, index: number) => (
             <div
               key={index}

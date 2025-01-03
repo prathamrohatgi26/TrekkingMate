@@ -29,7 +29,14 @@ const Navbar = () => {
   return (
     <header className="bg-[#121212] absolute top-0 left-0 right-0 z-50 w-full">
       <div className="flex justify-between items-center mx-[20px] sm:mx-[12%] h-[72px]">
-        <Image src="/images/White-logo.png" alt="logo" width={76} height={48} />
+        <a href="/">
+          <Image
+            src="/images/White-logo.png"
+            alt="logo"
+            width={76}
+            height={48}
+          />
+        </a>
         <div className=" hidden sm:flex items-center gap-4">
           <Button
             variant="ghost"
