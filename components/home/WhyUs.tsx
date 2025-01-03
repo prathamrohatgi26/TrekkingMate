@@ -9,7 +9,7 @@ const WhyUs = ({ heading, content }: any) => {
       : [
           {
             title: "Local Himalayan Experts",
-            body: "Dedicated local professionals are primarily based in our travel destinations and work exclusively for Ace the Himalaya to give you an authentic Himalayan experience.",
+            body: "Dedicated local professionals are primarily based in our travel destinations and work exclusively for Trekking Mate to give you an authentic Himalayan experience.",
           },
           {
             title: "Safety Above All",
@@ -17,7 +17,7 @@ const WhyUs = ({ heading, content }: any) => {
           },
           {
             title: "Unbeatable Value",
-            body: "We at Ace the Himalaya carefully curate our itineraries with the best possible services to guarantee that we provide you with the best trip that is value for money.",
+            body: "We at Trekking Mate carefully curate our itineraries with the best possible services to guarantee that we provide you with the best trip that is value for money.",
           },
         ];
   return (
