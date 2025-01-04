@@ -128,13 +128,32 @@ const TripHeading = () => {
         </span>
       </div>
       <div className="flex items-center justify-center sm:hidden relative">
-        <Image
-          src={"/images/1.png"}
-          alt="mobile-v"
-          className="h-full w-full max-h-[300px] aspect-square object-cover"
-          width={400}
-          height={300}
-        />
+        <Dialog>
+          <DialogTrigger className="h-full w-full">
+            <Image
+              src={"/images/1.png"}
+              alt="mobile-v"
+              className="h-full w-full max-h-[300px] aspect-square object-cover"
+              width={400}
+              height={300}
+            />
+          </DialogTrigger>
+          <DialogContent className=" bg-transparent border-none p-0">
+            <DialogTitle></DialogTitle>
+            <div className="flex flex-row items-center justify-center overflow-x-auto ">
+              {images.map((item, index) => (
+                <Image
+                  src={item}
+                  key={index}
+                  alt="trip image"
+                  width={400}
+                  height={350}
+                  className="h-auto w-screen object-contain flex-shrink-0"
+                />
+              ))}
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <span className="size-[32px] rounded-full bg-white text-[#121212] absolute top-4 right-4 grid place-items-center">
           <Heart size={20} />

@@ -3,33 +3,19 @@
 import React, { useState } from "react";
 import { SectionHeading } from "@/components/ui/Headings";
 import Image from "next/image";
-import Slider1 from "/public/images/slider1.png";
-import Slider2 from "/public/images/slider2.png";
-import Slider3 from "/public/images/slider3.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 
 const Activities = ({ tourData }: any) => {
-  const [SliderItems, setSliderItems] = useState([
-    {
-      image: Slider3,
-      title: "Trekking",
-      desc: "Starting from USD 2210/Person",
-      link: "",
-    },
-    {
-      image: Slider1,
-      title: "Tours",
-      desc: "Starting from USD 2210/Person",
-      link: "",
-    },
-    {
-      image: Slider2,
-      title: "Expedition",
-      desc: "Starting from USD 2210/Person",
-      link: "",
-    },
-  ]);
+  console.log(tourData);
+  const [SliderItems, setSliderItems] = useState(
+    tourData.map((tour: any, index: number) => ({
+      image: `/images/slider${index + 1}.png`,
+      title: tour.name,
+      desc: `Starting from ₹ ${tour.startsAt}/Person`,
+      link: `/tripType/${tour.name?.split(" ")[0]}`,
+    }))
+  );
 
   const moveSlider = (direction: "left" | "right") => {
     if (direction === "left") {
@@ -74,7 +60,7 @@ const Activities = ({ tourData }: any) => {
                 {index === 0 && (
                   <button
                     onClick={() => moveSlider("left")}
-                    className="absolute z-40 text-white -left-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:flex hidden"
+                    className="absolute z-40 text-white -left-4 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:flex hidden"
                   >
                     <ArrowLeft />
                   </button>
@@ -92,6 +78,8 @@ const Activities = ({ tourData }: any) => {
                     <Image
                       src={item.image}
                       alt={item.title}
+                      width={200}
+                      height={300}
                       className="object-cover h-full w-full hover:scale-105 transition-all duration-300"
                     />
                   </div>
@@ -99,9 +87,7 @@ const Activities = ({ tourData }: any) => {
                     <h3 className="text-xl font-bold ">{item.title}</h3>
                     <p className="">{item.desc}</p>
                     <button
-                      onClick={() =>
-                        (window.location.href = "/tripDetails/random")
-                      }
+                      onClick={() => (window.location.href = item.link)}
                       className="text-main text-sm self-start border-b-2 border-transparent border-solid hover:border-b-main transition-all duration-300"
                     >
                       Know More
