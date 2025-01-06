@@ -231,7 +231,7 @@ const TripHeading = ({ data }: any) => {
 
   const fetchImages = extractImageUrls(data.description);
 
-  console.log(fetchImages);
+  // console.log(fetchImages);
 
   const images = [
     "/images/1.png",
@@ -239,6 +239,7 @@ const TripHeading = ({ data }: any) => {
     "/images/3.png",
     "/images/4.png",
     "/images/5.png",
+    "/images/6.png",
   ];
 
   const [selectedImage, setSelectedImage] = useState(images[0]);
@@ -246,9 +247,9 @@ const TripHeading = ({ data }: any) => {
   // Extract title from description
   const title =
     data.description
-      .split("\n")
-      .find((line: string) => line.includes("|"))
-      .trim() || data.name;
+      ?.split("\n")
+      ?.find((line: string) => line.includes("|"))
+      ?.trim() || data.name;
 
   return (
     <div className="pt-16 sm:pt-20 pb-10 bg-white">
@@ -295,7 +296,7 @@ const TripHeading = ({ data }: any) => {
                       )}
                     </div>
                     <div className="flex items-center gap-2 justify-center">
-                      {images.map((item, idx) => (
+                      {images.slice(0, -1).map((item, idx) => (
                         <button
                           onClick={() => setSelectedImage(item)}
                           className={`w-full h-full rounded-md relative ${

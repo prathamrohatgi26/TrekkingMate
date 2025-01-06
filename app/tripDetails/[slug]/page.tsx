@@ -12,7 +12,7 @@ const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
 
   const data: any = await fetchItems.json();
 
-  console.log(data);
+  // console.log(data);
   return (
     <div className="bg-white">
       <TripData data={data} />
