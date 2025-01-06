@@ -247,13 +247,13 @@ const TripHeading = ({ data }: any) => {
   const title =
     data.description
       .split("\n")
-      .find((line) => line.includes("|"))
+      .find((line: string) => line.includes("|"))
       .trim() || data.name;
 
   return (
     <div className="pt-16 sm:pt-20 pb-10 bg-white">
       <div className="hidden sm:grid grid-cols-12 grid-rows-5 gap-x-2 gap-y-3 h-[400px] max-w-[1200px] mx-auto my-6">
-        {images.slice(0, 6).map((image, index) => {
+        {images.slice(0, 6).map((image: string, index: number) => {
           const gridSpans = [
             "col-span-6 row-span-5 rounded-l-lg",
             "col-span-3 row-span-3",
@@ -274,7 +274,9 @@ const TripHeading = ({ data }: any) => {
                     <Image
                       alt={`grid-trips-${index + 1}`}
                       src={image}
+                      // @ts-ignore
                       width={index === 0 ? 550 : 280}
+                      // @ts-ignore
                       height={index === 0 ? 370 : 220}
                       className="object-cover w-full h-full"
                     />
