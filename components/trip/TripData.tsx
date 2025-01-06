@@ -2,11 +2,11 @@ import React from "react";
 import TripHeading from "./TripHeading";
 import TripContent from "./TripContent";
 
-const TripData = () => {
+const TripData = ({ data }: any) => {
   return (
     <div className="bg-white">
-      <TripHeading />
-      <TripContent />
+      <TripHeading data={data?.data} />
+      <TripContent data={data?.data} />
     </div>
   );
 };

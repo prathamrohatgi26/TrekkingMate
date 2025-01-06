@@ -5,9 +5,10 @@ import { SectionHeading } from "@/components/ui/Headings";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
+import { useRouter } from "next/navigation";
 
 const Activities = ({ tourData }: any) => {
-  console.log(tourData);
+  const router = useRouter();
   const [SliderItems, setSliderItems] = useState(
     tourData.map((tour: any, index: number) => ({
       image: `/images/slider${index + 1}.png`,
@@ -19,9 +20,12 @@ const Activities = ({ tourData }: any) => {
 
   const moveSlider = (direction: "left" | "right") => {
     if (direction === "left") {
-      setSliderItems((prev) => [...prev.slice(1), prev[0]]);
+      setSliderItems((prev: any) => [...prev.slice(1), prev[0]]);
     } else {
-      setSliderItems((prev) => [prev[prev.length - 1], ...prev.slice(0, -1)]);
+      setSliderItems((prev: any) => [
+        prev[prev.length - 1],
+        ...prev.slice(0, -1),
+      ]);
     }
   };
   return (
@@ -48,7 +52,7 @@ const Activities = ({ tourData }: any) => {
         </button>
         <Carousel className="w-full overflow-clip">
           <CarouselContent className="w-full flex flex-row justify-center items-center">
-            {SliderItems.map((item, index) => (
+            {SliderItems.map((item: any, index: number) => (
               <CarouselItem
                 key={index}
                 className={` relative cursor-pointer sm:basis-1/3 ${
@@ -87,7 +91,7 @@ const Activities = ({ tourData }: any) => {
                     <h3 className="text-xl font-bold ">{item.title}</h3>
                     <p className="">{item.desc}</p>
                     <button
-                      onClick={() => (window.location.href = item.link)}
+                      onClick={() => router.push(item.link)}
                       className="text-main text-sm self-start border-b-2 border-transparent border-solid hover:border-b-main transition-all duration-300"
                     >
                       Know More

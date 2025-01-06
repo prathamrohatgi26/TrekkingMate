@@ -3,27 +3,29 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { ChevronDown, ChevronUp, Contact, Menu, Phone, X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showMobileOfferings, setShowMobileOfferings] = useState(false);
+  const router = useRouter();
 
   const dropdownItems = [
     {
       title: "Trekking",
       desc: "Starting from USD 2210/Person",
-      link: "",
+      link: `/tripType/Trekking`,
     },
     {
       title: "Tours",
       desc: "Starting from USD 2210/Person",
-      link: "",
+      link: "/tripType/Tours",
     },
     {
       title: "Expedition",
       desc: "Starting from USD 2210/Person",
-      link: "",
+      link: "/tripType/Expedition",
     },
   ];
   return (
@@ -88,6 +90,10 @@ const Navbar = () => {
                 <button
                   className="h-16 bg-[#212121] text-white text-sm font-medium p-2 w-full text-start px-5"
                   key={index}
+                  onClick={() => {
+                    router.push(item.link);
+                    setShowMobileDropdown(false);
+                  }}
                 >
                   <p className="text-white text-sm">{item.title}</p>
                   <p className="text-white/60 text-xs">{item.desc}</p>
@@ -114,6 +120,10 @@ const Navbar = () => {
             <button
               key={index}
               className="p-4 flex flex-col gap-2 items-start justify-start group rounded-xl hover:bg-[#1E1E1E]"
+              onClick={() => {
+                router.push(item.link);
+                setShowDropdown(false);
+              }}
             >
               <p className="text-white font-bold text-xl group-hover:text-main">
                 {item.title}

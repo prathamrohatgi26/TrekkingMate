@@ -35,7 +35,7 @@ const TourCards = ({
           : "desc"}
       </p>
       <button
-        className="self-start rouned-md px-3 py-1 bg-main text-white font-medium rounded-lg mt-auto"
+        className="self-start rouned-xl px-3 py-1 bg-main text-white font-semibold rounded-lg mt-auto capitalize"
         onClick={() =>
           (window.location.href = `/tripDetails/${data.documentId}`)
         }

@@ -13,7 +13,7 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-const TripContent = () => {
+const TripContent = ({ data }: any) => {
   const [date, setDate] = React.useState<DateRange | undefined>();
   return (
     <div className="bg-white max-w-[1200px] mx-auto flex flex-row items-start gap-2 relative pb-20 ">
