@@ -84,23 +84,20 @@ const Navbar = () => {
             Offerings
             {showMobileDropdown ? <ChevronDown /> : <ChevronUp />}
           </button>
-          {showMobileOfferings && (
-            <>
-              {dropdownItems.map((item, index) => (
-                <button
-                  className="h-16 bg-[#212121] text-white text-sm font-medium p-2 w-full text-start px-5"
-                  key={index}
-                  onClick={() => {
-                    router.push(item.link);
-                    setShowMobileDropdown(false);
-                  }}
-                >
-                  <p className="text-white text-sm">{item.title}</p>
-                  <p className="text-white/60 text-xs">{item.desc}</p>
-                </button>
-              ))}
-            </>
-          )}
+          {showMobileOfferings &&
+            dropdownItems.map((item, index) => (
+              <button
+                className="h-16 bg-[#212121] text-white text-sm font-medium p-2 w-full text-start px-5"
+                key={index}
+                onClick={() => {
+                  router.push(item.link);
+                  setShowMobileDropdown(false);
+                }}
+              >
+                <p className="text-white text-sm">{item.title}</p>
+                <p className="text-white/60 text-xs">{item.desc}</p>
+              </button>
+            ))}
           <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
             Why Us?
           </button>
