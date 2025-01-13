@@ -25,9 +25,6 @@ const TripContent = ({ data }: any) => {
       return acc;
     }, {});
 
-  // console.log("tek", sections["hightlights"]);
-  // console.log("hight", sections["trek hightlights"]);
-  // Extract highlights from the markdown content
   const getHighlights = () => {
     const highlightsContent =
       sections["trek highlights"] || sections["highlights"];

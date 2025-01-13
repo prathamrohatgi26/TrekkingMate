@@ -2,8 +2,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import dummy from "/public/images/Cover.png";
+import ReactMarkdown from "react-markdown";
 
-const BlogContent = () => {
+const BlogContent = ({ data }: any) => {
   const [selectedHeading, setSelectedHeading] = useState(0);
   const headings = [
     "Rooms and Beds",
@@ -11,22 +12,27 @@ const BlogContent = () => {
     "Electricity, Charging Points and Wi-Fi",
     "Food and Dining hall",
   ];
+
+  const contentSections = data.content.split("\n## ").filter(Boolean);
   return (
     <div className="h-auto w-full bg-white pt-16 max-w-screen-lg mx-auto">
       <p className="text-[#121212] text-center">
-        Annapurna region is the second most trekked region after the Khumbu
+        {/* Annapurna region is the second most trekked region after the Khumbu
         area. Recently, few of the areas in the Annapurna Circuit has been
         accessed by motorable roads. With the huge flow of the tourists hitting
         to the Annapurna region there are hundreds of teahouses built in the
-        trails here. For the travelers willing to do
+        trails here. For the travelers willing to do */}
+        {data.summary}
       </p>
       <Image
-        src={dummy}
+        src={data.image.formats.medium.url}
         className="h-full w-full object-cover rounded-xl mt-10"
         alt="main-img"
+        width={data.image.formats.medium.width}
+        height={data.image.formats.medium.height}
       />
       <div className="w-full flex flex-row py-10">
-        <div className="w-1/5">
+        <div className="w-1/5 hidden sm:block">
           <div className="flex flex-col">
             {headings.map((item, index) => (
               <button
@@ -82,22 +88,9 @@ const BlogContent = () => {
             </div>
           </div>
         </div>
-        <div className="w-4/5 flex-col flex items-start justify-start gap-4">
-          <p>
-            Annapurna region is the second most trekked region after the Khumbu
-            area. Recently, few of the areas in the Annapurna Circuit has been
-            accessed by motorable roads. With the huge flow of the tourists
-            hitting to the Annapurna region there are hundreds of teahouses
-            built in the trails here.
-          </p>
-          <p>
-            For the travelers willing to do a luxury trek, the guesthouses are
-            luxurious with a decent bathroom, comfortable king sized beds etc.
-            However, as the maximum trekkers go for the normal trek and would
-            want to stay in the basic guesthouse, there are few things that they
-            must be aware about these teahouses.
-          </p>
-          {headings.map((item, index) => (
+
+        <div className="w-full sm:w-4/5 flex-col flex items-start justify-start gap-4">
+          {/* {headings.map((item, index) => (
             <div className="flex flex-col gap-2" key={index}>
               <h2 className="text-[#121212] font-semibold text-3xl mt-4">
                 {item}
@@ -112,11 +105,21 @@ const BlogContent = () => {
                 guesthouses, there are dormitory styled rooms as well where the
                 rooms must be shared by few travelers.
               </p>
-              <Image
+             <Image
                 src={dummy}
                 className="h-full w-full object-cover rounded-xl"
                 alt="main-img"
-              />
+              /> 
+            </div>
+          ))} */}
+          {contentSections.map((section, index) => (
+            <div className="flex flex-col gap-2" key={index}>
+              <h2 className="text-[#121212] font-semibold text-3xl mt-4 text-center sm:text-start">
+                {section.split("\n")[0].replace("## ", "")}
+              </h2>
+              <ReactMarkdown className="text-center sm:text-start">
+                {section.split("\n").slice(1).join("\n")}
+              </ReactMarkdown>
             </div>
           ))}
         </div>

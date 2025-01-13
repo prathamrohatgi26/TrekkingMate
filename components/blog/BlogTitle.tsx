@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const BlogTitle = () => {
+const BlogTitle = ({ title, publishedAt }: any) => {
   const categories = [
     { name: "General", color: "bg-[#4C7AB6]/[.24]", text: "text-[#4c7ab6]" },
     {
@@ -66,17 +66,29 @@ const BlogTitle = () => {
       text: "text-[#937A08]",
     },
   ];
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
   return (
-    <div className="mx-20 flex flex-col gap-4 items-center justify-center py-16 border-b border-solid border-[#d9d9d9]">
+    <div className="sm:mx-20 flex flex-col gap-4 items-center justify-center py-10 sm:py-16 border-b border-solid border-[#d9d9d9]">
       <span className="w-auto px-3 py-2 bg-[#8A2BE23D] text-sm font-medium text-[#8A2BE2] rounded-2xl">
         (category)
       </span>
-      <h1 className="text-5xl text-[#121212] font-bold text-center">
-        Teahouses in Annapurna Region; Things You Need to Know
+      <h1 className="text-3xl sm:text-5xl text-[#121212] font-bold text-center">
+        {/* Teahouses in Annapurna Region; Things You Need to Know */}
+        {title}
       </h1>
-      <span className="flex items-center gap-4 text-[#12121299] font-medium">
-        <p>Published on "(dynamic date)"</p>
-        <span className="w-px h-[20px] bg-[#D9D9D9] flex-shrink-0 flex" />
+      <span className="flex flex-col sm:flex-row items-center gap-4 text-[#12121299] font-medium">
+        <p>
+          Published on <b>{formatDate(publishedAt)}</b>
+        </p>
+        <span className="sm:w-px h-[2px] w-full   sm:h-[20px] bg-[#D9D9D9] flex-shrink-0 flex" />
         <p className="flex items-center gap-2">
           Share on :
           <Image

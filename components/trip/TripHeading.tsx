@@ -231,8 +231,6 @@ const TripHeading = ({ data }: any) => {
 
   const fetchImages = extractImageUrls(data.description);
 
-  // console.log(fetchImages);
-
   const images = [
     "/images/1.png",
     "/images/2.png",

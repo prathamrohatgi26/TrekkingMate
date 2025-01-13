@@ -10,11 +10,11 @@ import FeaturedTrek from "@/components/home/FeaturedTrek";
 
 export default async function Home() {
   const [homepageData, blogData, tourData] = await Promise.all([
-    fetch("https://trekking-mate-services.onrender.com/api/homepage"),
+    fetch("https://api.trekkingmate.com/api/homepage"),
     fetch(
-      "https://trekking-mate-services.onrender.com/api/blogs?populate=image&sort=createdAt:desc"
+      "https://api.trekkingmate.com/api/blogs?populate=image&sort=createdAt:desc"
     ),
-    fetch("https://trekking-mate-services.onrender.com/api/tour-types"),
+    fetch("https://api.trekkingmate.com/api/tour-types"),
   ]);
 
   const [res, blogRes, tourTypes] = await Promise.all([
@@ -33,9 +33,9 @@ export default async function Home() {
       />
       <Activities tourData={tourTypes?.tours} />
       <Blogs blogData={blogRes.data} />
-      <FeaturedTrek />
+      {/* <FeaturedTrek /> */}
       <Reviews />
-      <InstaGrid />
+      {/* <InstaGrid /> */}
       <FAQs />
     </>
   );

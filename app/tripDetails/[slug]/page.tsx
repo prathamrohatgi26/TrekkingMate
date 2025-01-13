@@ -5,14 +5,12 @@ import React from "react";
 
 const page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
-  console.log(slug);
   const fetchItems = await fetch(
-    `https://trekking-mate-services.onrender.com/api/tours/${slug}?populate=*`
+    `https://api.trekkingmate.com/api/tours/${slug}?populate=*`
   );
 
   const data: any = await fetchItems.json();
 
-  // console.log(data);
   return (
     <div className="bg-white">
       <TripData data={data} />

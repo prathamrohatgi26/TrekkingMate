@@ -12,7 +12,7 @@ const FeaturedTrek = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://trekking-mate-services.onrender.com/api/shoutouts"
+          "https://api.trekkingmate.com/api/shoutouts"
         );
         const result = await response.json();
         setTrek(result?.data?.[0]);

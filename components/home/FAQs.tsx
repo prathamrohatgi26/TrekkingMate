@@ -8,13 +8,9 @@ import {
 } from "@/components/ui/accordion";
 
 const FAQs = async () => {
-  const FaqFetch = await fetch(
-    `https://trekking-mate-services.onrender.com/api/faqs`
-  );
+  const FaqFetch = await fetch(`https://api.trekkingmate.com/api/faqs`);
 
   const data: any = await FaqFetch.json();
-
-  // console.log(data);
 
   return (
     <div className=" bg-[#121212] flex flex-col items-center py-20">
