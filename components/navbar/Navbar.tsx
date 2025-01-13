@@ -1,33 +1,40 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import { ChevronDown, ChevronUp, Contact, Menu, Phone, X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [dropdownItems, setDropdownItems] = useState([]);
   const [showMobileDropdown, setShowMobileDropdown] = useState(false);
   const [showMobileOfferings, setShowMobileOfferings] = useState(false);
   const router = useRouter();
 
-  const dropdownItems = [
-    {
-      title: "Trekking",
-      desc: "Starting from USD 2210/Person",
-      link: `/tripType/Trekking`,
-    },
-    {
-      title: "Tours",
-      desc: "Starting from USD 2210/Person",
-      link: "/tripType/Tours",
-    },
-    {
-      title: "Expedition",
-      desc: "Starting from USD 2210/Person",
-      link: "/tripType/Expedition",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.trekkingmate.com/api/tour-types?populate=*"
+        );
+        const result = await response.json();
+        const itemsArr = result.tours.map((item: any) => {
+          return {
+            title: item.name,
+            desc: `Starting from ₹ ${item.startsAt}/Person`,
+            link: `/tripType/${item.name?.split(" ")[0]}`,
+          };
+        });
+        setDropdownItems(itemsArr);
+      } catch (error) {
+        console.error("Error fetching trek data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <header className="bg-[#121212] absolute top-0 left-0 right-0 z-50 w-full">
       <div className="flex justify-between items-center mx-[20px] sm:mx-[12%] h-[72px]">
@@ -85,7 +92,7 @@ const Navbar = () => {
             {showMobileDropdown ? <ChevronDown /> : <ChevronUp />}
           </button>
           {showMobileOfferings &&
-            dropdownItems.map((item, index) => (
+            dropdownItems.map((item: any, index) => (
               <button
                 className="h-16 bg-[#212121] text-white text-sm font-medium p-2 w-full text-start px-5"
                 key={index}
@@ -113,7 +120,7 @@ const Navbar = () => {
             Curating Experiences,
             <br /> Not Just Trips!
           </p>
-          {dropdownItems.map((item, index) => (
+          {dropdownItems.map((item: any, index) => (
             <button
               key={index}
               className="p-4 flex flex-col gap-2 items-start justify-start group rounded-xl hover:bg-[#1E1E1E]"

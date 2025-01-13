@@ -2,34 +2,19 @@ import React from "react";
 import { Gem } from "lucide-react";
 import { SectionHeading } from "../ui/Headings";
 
-const WhyUs = ({ heading, content }: any) => {
-  const cardContent =
-    content?.length > 0
-      ? content
-      : [
-          {
-            title: "Local Himalayan Experts",
-            body: "Dedicated local professionals are primarily based in our travel destinations and work exclusively for Trekking Mate to give you an authentic Himalayan experience.",
-          },
-          {
-            title: "Safety Above All",
-            body: "Your safe and secure trip is our top priority. Fully health-trained guides and staff take care of you throughout the journey.",
-          },
-          {
-            title: "Unbeatable Value",
-            body: "We at Trekking Mate carefully curate our itineraries with the best possible services to guarantee that we provide you with the best trip that is value for money.",
-          },
-        ];
+const WhyUs = ({ heading, content, parallax }: any) => {
   return (
-    <section className="h-[150vh] sm:h-[110vh] bg-white flex flex-col bg-activities bg-fixed bg-center bg-no-repeat">
+    <section
+      className="h-[150vh] sm:h-[110vh] bg-white flex flex-col bg-fixed bg-center bg-no-repeat"
+      style={{
+        backgroundImage: `url(${parallax.formats.large.url}`,
+        backgroundSize: "cover",
+      }}
+    >
       <div className="flex flex-col items-center justify-center gap-2 sm:max-h-[500px] py-10 bg-white">
-        <SectionHeading
-          title="why us"
-          subtitle={heading ?? "What Makes Us Different"}
-          variant="white"
-        />
+        <SectionHeading title="why us" subtitle={heading} variant="white" />
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 my-10 p-2">
-          {cardContent.map((card: any, index: number) => (
+          {content.map((card: any, index: number) => (
             <div
               key={index}
               className="bg-white flex flex-col items-center justify-center gap-2 w-full sm:w-1/4"

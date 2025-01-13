@@ -10,7 +10,6 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/images/Hero.png')",
         activities: "url('/images/joinplease.png')",
         footer: "url('/images/BG.png')",
         newsletter: "url('/images/newsletterbg.png')",

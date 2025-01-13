@@ -10,7 +10,7 @@ import Link from "next/link";
 const Activities = ({ tourData }: any) => {
   const [SliderItems, setSliderItems] = useState(
     tourData.map((tour: any, index: number) => ({
-      image: `/images/slider${index + 1}.png`,
+      image: tour.image.formats.medium.url,
       title: tour.name,
       desc: `Starting from ₹ ${tour.startsAt}/Person`,
       link: `/tripType/${tour.name?.split(" ")[0]}`,

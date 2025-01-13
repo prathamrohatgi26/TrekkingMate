@@ -5,7 +5,12 @@ import { Search } from "lucide-react";
 const Hero = ({ res }: any) => {
   return (
     <section className="overflow-hidden relative">
-      <div className="bg-hero bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0" />
+      <div
+        className="bg-cover bg-center bg-no-repeat herozoom h-screen absolute top-0 left-0 right-0"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 6, 0.5)), url(${res.heroBackground.formats.large.url}`,
+        }}
+      />
       <div className="flex flex-col gap-6 sm:gap-4 items-center justify-center h-screen z-20 relative p-2 sm:p-0">
         <h1 className="text-5xl sm:text-7xl font-bold text-white text-center">
           {res?.heroHeading ?? "Unlock Your Wanderlust"}

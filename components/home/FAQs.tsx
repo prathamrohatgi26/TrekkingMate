@@ -34,13 +34,9 @@ const FAQs = async () => {
               className="border-white/[.12]"
             >
               <AccordionTrigger className="text-white font-semibold text-lg sm:text-xl">
-                {/* What is Lorem Ipsum? */}
                 {item.title}
               </AccordionTrigger>
               <AccordionContent className="text-white/[.6] text-sm sm:text-base font-normal">
-                {/* Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s. */}
                 {item.description}
               </AccordionContent>
             </AccordionItem>
