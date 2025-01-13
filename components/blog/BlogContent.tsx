@@ -112,7 +112,7 @@ const BlogContent = ({ data }: any) => {
               /> 
             </div>
           ))} */}
-          {contentSections.map((section, index) => (
+          {contentSections.map((section: any, index: any) => (
             <div className="flex flex-col gap-2" key={index}>
               <h2 className="text-[#121212] font-semibold text-3xl mt-4 text-center sm:text-start">
                 {section.split("\n")[0].replace("## ", "")}
