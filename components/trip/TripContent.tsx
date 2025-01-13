@@ -1,5 +1,5 @@
 "use client";
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Calendar } from "../ui/calendar";
 import { DateRange } from "react-day-picker";
@@ -11,9 +11,25 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "../ui/accordion";
+import FAQs from "../home/FAQs";
 
 const TripContent = ({ data }: any) => {
   const [date, setDate] = React.useState<DateRange | undefined>();
+  const [faqs, setFaqs] = React.useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`https://api.trekkingmate.com/api/faqs`);
+        const result = await response.json();
+        setFaqs(result.data);
+      } catch (error) {
+        console.error("Error fetching trek data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   // Parse the markdown content to extract sections
   const sections = data.description
@@ -130,26 +146,24 @@ const TripContent = ({ data }: any) => {
         <h2 className="font-semibold text-2xl sm:text-3xl mt-4 mb-2 sm:my-2">
           Got Questions? We've Got Answers!
         </h2>
-        <div className="w-[90%] sm:w-[80%] mx-auto sm:mx-0 py-2">
+        <div className="w-full">
           <Accordion
             type="single"
             collapsible
             defaultValue="item-0"
-            className="w-full gap-2 sm:gap-4 flex flex-col"
+            className="w-full px-4 gap-4 flex flex-col "
           >
-            {Array.from({ length: 4 }).map((_, index) => (
+            {faqs?.map((item: any, index: number) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="border-none"
+                className="border-white/[.12]"
               >
-                <AccordionTrigger className="text-[#121212] font-semibold text-lg sm:text-xl">
-                  What is Lorem Ipsum?
+                <AccordionTrigger className="font-semibold text-lg sm:text-xl">
+                  {item.title}
                 </AccordionTrigger>
-                <AccordionContent className="text-[#121212]/[.6] text-sm sm:text-base font-normal">
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s.
+                <AccordionContent className=" text-sm sm:text-base font-normal">
+                  {item.description}
                 </AccordionContent>
               </AccordionItem>
             ))}

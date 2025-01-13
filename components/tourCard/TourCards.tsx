@@ -5,7 +5,6 @@ const TourCards = ({
 }: {
   data: { name: string; documentId: string; description: any };
 }) => {
-  console.log(data);
   const getTripIntroduction = (description: string) => {
     const lines = description.split("\n");
     let isIntroSection = false;
