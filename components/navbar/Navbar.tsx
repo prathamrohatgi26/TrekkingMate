@@ -59,11 +59,14 @@ const Navbar = () => {
             {showDropdown ? <ChevronDown /> : <ChevronUp />}
           </Button>
           <Button variant="ghost" className="text-white font-semibold text-lg">
-            Why us ?
-          </Button>
-          <Button variant="ghost" className="text-white font-semibold text-lg">
             About us
           </Button>
+          {/* <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
+            Gallery
+          </button> */}
+          {/* <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
+            Top 10 Treks
+          </button> */}
           <Button
             variant="outline"
             className="rounded-2xl text-white outline-white bg-transparent font-medium text-lg"
