@@ -29,7 +29,7 @@ const InstaGrid = () => {
   // Store just the post IDs
   const instagramPosts = [
     "DEZIQDyzuov",
-    "DEXTjS5zR8h",
+    "DEwRaT9Ta46",
     "DESiBiGzFDp",
     "DDtuHhHtzBo",
     "DDsB87ZzZG-",

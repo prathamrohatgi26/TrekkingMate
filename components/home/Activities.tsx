@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Activities = ({ tourData }: any) => {
   const [SliderItems, setSliderItems] = useState(
-    tourData.map((tour: any, index: number) => ({
+    tourData?.map((tour: any, index: number) => ({
       image: tour.image.formats.medium.url,
       title: tour.name,
       desc: `Starting from ₹ ${tour.startsAt}/Person`,
@@ -51,7 +51,7 @@ const Activities = ({ tourData }: any) => {
         </button>
         <Carousel className="w-full overflow-clip">
           <CarouselContent className="w-full flex flex-row justify-center items-center">
-            {SliderItems.map((item: any, index: number) => (
+            {SliderItems?.map((item: any, index: number) => (
               <CarouselItem
                 key={index}
                 className={` relative cursor-pointer sm:basis-1/3 ${

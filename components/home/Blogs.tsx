@@ -6,7 +6,7 @@ import Image from "next/image";
 import { SectionHeading } from "../ui/Headings";
 const Blogs = ({ blogData }: any) => {
   return (
-    <div className="sm:h-screen bg-white flex flex-col items-center py-20">
+    <div className="sm:min-h-screen bg-white flex flex-col items-center py-20">
       <SectionHeading
         title="blog"
         subtitle="Stories That Inspire Your Next Journey"
@@ -17,10 +17,16 @@ const Blogs = ({ blogData }: any) => {
         {blogData?.map((blog: any) => (
           <div
             key={blog.id}
-            className="bg-white flex flex-col items-center justify-center gap-2 w-[90%] h-[500px] rounded-xl overflow-hidden relative group"
+            className={`bg-white flex flex-col items-center justify-center gap-2 ${
+              blogData.length === 1
+                ? "w-[90%]"
+                : blogData.length === 2
+                ? "w-[45%]"
+                : "w-[30%]"
+            } h-[500px] rounded-xl overflow-hidden relative group`}
           >
             <Image
-              src={Blog1}
+              src={blog.image.formats.small.url}
               alt="blog"
               width={300}
               height={500}
