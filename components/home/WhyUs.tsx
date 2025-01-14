@@ -7,7 +7,7 @@ const WhyUs = ({ heading, content, parallax }: any) => {
     <section
       className="h-[150vh] sm:h-[110vh] bg-white flex flex-col bg-fixed bg-center bg-no-repeat"
       style={{
-        backgroundImage: `url(${parallax.formats.large.url})`,
+        backgroundImage: `url('${parallax.formats.large.url}')`,
         backgroundSize: "cover",
       }}
     >
