@@ -12,7 +12,7 @@ const NewsLetter = async () => {
     <div
       className="min-h-[45vh] w-full bg-cover bg-center bg-no-repeat flex flex-col items-center justify-center gap-[40px]"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 6, 0.5)), url(${data.heroBackground.formats.large.url}`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 6, 0.5)), url(${data.heroBackground.formats.large.url})`,
       }}
     >
       <p className="text-3xl sm:text-5xl text-white font-semibold text-center">
