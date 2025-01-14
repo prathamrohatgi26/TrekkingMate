@@ -1,21 +1,44 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SectionHeading } from "@/components/ui/Headings";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "../ui/carousel";
 import Link from "next/link";
 
-const Activities = ({ tourData }: any) => {
-  const [SliderItems, setSliderItems] = useState(
-    tourData?.map((tour: any, index: number) => ({
-      image: tour.image.formats.medium.url,
-      title: tour.name,
-      desc: `Starting from ₹ ${tour.startsAt}/Person`,
-      link: `/tripType/${tour.name?.split(" ")[0]}`,
-    }))
-  );
+const Activities = () => {
+  const [SliderItems, setSliderItems] = useState<any>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://api.trekkingmate.com/api/tour-types?populate=*"
+        );
+        const result = await response.json();
+        const tourData = result.tours;
+        const arr = tourData.map((tour: any, index: number) => {
+          return {
+            image: tour.image.formats.medium.url,
+            title: tour.name,
+            desc: `Starting from ₹ ${tour.startsAt}/Person`,
+            link: `/tripType/${tour.name?.split(" ")[0]}`,
+          };
+        });
+        console.log(arr);
+        setSliderItems(arr);
+      } catch (error) {
+        console.error("Error fetching trek data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    console.log("slider", SliderItems);
+  }, [SliderItems]);
 
   const moveSlider = (direction: "left" | "right") => {
     if (direction === "left") {
@@ -27,6 +50,7 @@ const Activities = ({ tourData }: any) => {
       ]);
     }
   };
+
   return (
     <div className="h-screen bg-[#121212] flex flex-col items-center py-20">
       <SectionHeading
@@ -68,7 +92,7 @@ const Activities = ({ tourData }: any) => {
                     <ArrowLeft />
                   </button>
                 )}
-                {index === 2 && (
+                {index === SliderItems.length - 1 && (
                   <button
                     onClick={() => moveSlider("right")}
                     className="absolute z-40 text-white -right-6 top-1/2 hover:bg-mainhover -translate-y-1/2 bg-main rounded-full p-2 sm:flex hidden"

@@ -19,7 +19,7 @@ const Navbar = () => {
           "https://api.trekkingmate.com/api/tour-types?populate=*"
         );
         const result = await response.json();
-        const itemsArr = result.tours.map((item: any) => {
+        const itemsArr = result.tours?.map((item: any) => {
           return {
             title: item.name,
             desc: `Starting from ₹ ${item.startsAt}/Person`,
@@ -37,16 +37,19 @@ const Navbar = () => {
 
   return (
     <header className="bg-[#121212] absolute top-0 left-0 right-0 z-50 w-full">
-      <div className="flex justify-between items-center mx-[20px] sm:mx-[12%] h-[72px]">
-        <a href="/">
+      <div className="flex justify-between items-center mx-[20px] sm:mx-[12%] h-[100px]">
+        <a className="flex items-center" href="/">
           <Image
             src="/images/White-logo.png"
             alt="logo"
-            width={76}
-            height={48}
+            width={124}
+            height={96}
           />
+          <span className="hidden md:flex text-white font-bold">
+            Trekking Mate
+          </span>
         </a>
-        <div className=" hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4">
           <Button
             variant="ghost"
             className="text-white font-semibold text-lg"
@@ -105,12 +108,16 @@ const Navbar = () => {
                 <p className="text-white/60 text-xs">{item.desc}</p>
               </button>
             ))}
-          <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
-            Why Us?
-          </button>
+
           <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
             About Us
           </button>
+          {/* <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
+            Gallery
+          </button> */}
+          {/* <button className="h-12 bg-[#121212] text-white text-sm font-medium p-2 w-full text-start px-5">
+            Top 10 Treks
+          </button> */}
         </div>
       )}
 

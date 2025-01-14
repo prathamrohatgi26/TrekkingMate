@@ -57,11 +57,7 @@ const InstaGrid = () => {
               style={{ display: "flex", justifyContent: "center" }}
               key={postId}
             >
-              <InstagramEmbed
-                url={`https://www.instagram.com/p/${postId}/`}
-                width={330}
-                height={500}
-              />
+              <InstagramEmbed url={`https://www.instagram.com/p/${postId}/`} />
             </div>
           ))}
       </div>

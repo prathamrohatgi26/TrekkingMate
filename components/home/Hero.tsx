@@ -12,12 +12,11 @@ const Hero = ({ res }: any) => {
         }}
       />
       <div className="flex flex-col gap-6 sm:gap-4 items-center justify-center h-screen z-20 relative p-2 sm:p-0">
-        <h1 className="text-5xl sm:text-7xl font-bold text-white text-center">
-          {res?.heroHeading ?? "Unlock Your Wanderlust"}
+        <h1 className="text-3xl md:text-5xl font-bold text-white text-center">
+          {res?.heroHeading}
         </h1>
-        <p className=" text-xl sm:text-2xl text-white text-center">
-          {res?.heroSubHeading ??
-            "Discover destinations that inspire and experiences that excite"}
+        <p className="text-md md:text-2xl text-white text-center">
+          {res?.heroSubHeading}
         </p>
         <div className="relative w-full sm:w-1/2 flex justify-center items-center mt-6">
           <input

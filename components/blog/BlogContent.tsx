@@ -6,12 +6,12 @@ import ReactMarkdown from "react-markdown";
 
 const BlogContent = ({ data }: any) => {
   const [selectedHeading, setSelectedHeading] = useState(0);
-  const headings = [
-    "Rooms and Beds",
-    "Toilets and Showers",
-    "Electricity, Charging Points and Wi-Fi",
-    "Food and Dining hall",
-  ];
+  // const headings = [
+  //   "Rooms and Beds",
+  //   "Toilets and Showers",
+  //   "Electricity, Charging Points and Wi-Fi",
+  //   "Food and Dining hall",
+  // ];
 
   const contentSections = data.content.split("\n## ").filter(Boolean);
   return (
@@ -34,7 +34,7 @@ const BlogContent = ({ data }: any) => {
       <div className="w-full flex flex-row py-10">
         <div className="w-1/5 hidden sm:block">
           <div className="flex flex-col">
-            {headings.map((item, index) => (
+            {/* {headings.map((item, index) => (
               <button
                 key={index}
                 className={`border-l-2 border-solid w-full h-[50px] p-2.5 text-sm text-start ${
@@ -45,7 +45,7 @@ const BlogContent = ({ data }: any) => {
               >
                 {item}
               </button>
-            ))}
+            ))} */}
 
             <div className="mt-4">
               <h3 className="text-sm tect-[#717171] font-medium mb-4">
@@ -117,7 +117,7 @@ const BlogContent = ({ data }: any) => {
               <h2 className="text-[#121212] font-semibold text-3xl mt-4 text-center sm:text-start">
                 {section.split("\n")[0].replace("## ", "")}
               </h2>
-              <ReactMarkdown className="text-center sm:text-start">
+              <ReactMarkdown className="text-center sm:text-start whitespace-pre-wrap">
                 {section.split("\n").slice(1).join("\n")}
               </ReactMarkdown>
             </div>

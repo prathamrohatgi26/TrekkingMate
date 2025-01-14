@@ -77,9 +77,9 @@ const BlogTitle = ({ title, publishedAt }: any) => {
   };
   return (
     <div className="sm:mx-20 flex flex-col gap-4 items-center justify-center py-10 sm:py-16 border-b border-solid border-[#d9d9d9]">
-      <span className="w-auto px-3 py-2 bg-[#8A2BE23D] text-sm font-medium text-[#8A2BE2] rounded-2xl">
+      {/* <span className="w-auto px-3 py-2 bg-[#8A2BE23D] text-sm font-medium text-[#8A2BE2] rounded-2xl">
         (category)
-      </span>
+      </span> */}
       <h1 className="text-3xl sm:text-5xl text-[#121212] font-bold text-center">
         {/* Teahouses in Annapurna Region; Things You Need to Know */}
         {title}

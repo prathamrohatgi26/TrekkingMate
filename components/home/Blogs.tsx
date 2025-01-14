@@ -13,37 +13,36 @@ const Blogs = ({ blogData }: any) => {
         variant="white"
       />
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-10 flex-wrap">
-        {blogData?.map((blog: any) => (
-          <div
-            key={blog.id}
-            className={`bg-white flex flex-col items-center justify-center gap-2 ${
-              blogData.length === 1
-                ? "w-[90%]"
-                : blogData.length === 2
-                ? "w-[45%]"
-                : "w-[30%]"
-            } h-[500px] rounded-xl overflow-hidden relative group`}
-          >
-            <Image
-              src={blog.image.formats.small.url}
-              alt="blog"
-              width={300}
-              height={500}
-              className="h-full w-full object-cover group-hover:scale-110 transition-all duration-300"
-            />
-            <span className="flex flex-col items-start justify-center px-4 py-6 gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black">
-              <p className="text-white text-sm font-medium">NEPAL</p>
-              <p className="text-white text-lg font-semibold">{blog.title}</p>
-              <a
-                href={`/blogs/${blog.documentId}`}
-                className="text-main border-b-2 border-transparent border-solid group-hover:border-b-main transition-all duration-300"
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-10 mt-10 p-4">
+        {blogData?.map((blog: any, _i: number) => {
+          if (_i < 2)
+            return (
+              <div
+                key={blog.id}
+                className={`bg-white flex flex-col items-center justify-center gap-2 h-[500px] rounded-xl overflow-hidden relative group`}
               >
-                Read More
-              </a>
-            </span>
-          </div>
-        ))}
+                <Image
+                  src={blog.image.formats.small.url}
+                  alt="blog"
+                  width={300}
+                  height={500}
+                  className="h-full w-full object-cover group-hover:scale-110 transition-all duration-300"
+                />
+                <span className="flex flex-col items-start justify-center px-4 py-6 gap-2 absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-black">
+                  <p className="text-white text-sm font-medium">NEPAL</p>
+                  <p className="text-white text-lg font-semibold">
+                    {blog.title}
+                  </p>
+                  <a
+                    href={`/blogs/${blog.documentId}`}
+                    className="text-main border-b-2 border-transparent border-solid group-hover:border-b-main transition-all duration-300"
+                  >
+                    Read More
+                  </a>
+                </span>
+              </div>
+            );
+        })}
       </div>
     </div>
   );
