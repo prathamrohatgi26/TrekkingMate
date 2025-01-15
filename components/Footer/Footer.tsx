@@ -42,7 +42,9 @@ const Footer = () => {
               width={124}
               height={96}
             />
-            <p className="text-white">Unlock Your Wanderlust!</p>
+            <p className="text-white font-ephesis tracking-widest text-lg">
+              Unlock Your Wanderlust!
+            </p>
             <p className="flex items-center gap-2 text-white mt-4">
               <Mail size={18} /> info@trekkingmate.com
             </p>
