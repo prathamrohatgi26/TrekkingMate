@@ -26,7 +26,6 @@ const Activities = () => {
             link: `/tripType/${tour.name?.split(" ")[0]}`,
           };
         });
-        console.log(arr);
         setSliderItems(arr);
       } catch (error) {
         console.error("Error fetching trek data:", error);
@@ -35,10 +34,6 @@ const Activities = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    console.log("slider", SliderItems);
-  }, [SliderItems]);
 
   const moveSlider = (direction: "left" | "right") => {
     if (direction === "left") {

@@ -24,7 +24,6 @@ export default async function Home() {
   return (
     <>
       <Hero res={res?.data} />
-      <KPIs res={res?.data?.metrics} />
       <WhyUs
         heading={res?.data?.whyUsHeading}
         content={res?.data?.whyUsContent}

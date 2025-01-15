@@ -68,12 +68,6 @@ const Navbar = () => {
             Top 10 Treks
           </button> */}
           <Button
-            variant="outline"
-            className="rounded-2xl text-white outline-white bg-transparent font-medium text-lg"
-          >
-            +977 9876543210
-          </Button>
-          <Button
             variant="default"
             className="rounded-2xl bg-main text-white font-medium text-lg hover:bg-mainhover "
           >

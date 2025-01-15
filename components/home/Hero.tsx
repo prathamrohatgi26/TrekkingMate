@@ -1,8 +1,42 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Button } from "../ui/button";
 import { Search } from "lucide-react";
 
 const Hero = ({ res }: any) => {
+  const generateKpiBody = (kpis: any[]) => {
+    return (
+      <div className="flex gap-10 flex-col lg:flex-row">
+        <div className="flex gap-10">
+          <div
+            className={`flex flex-col items-center justify-center pl-5 lg:pl-0`}
+          >
+            <p className="text-white text-2xl font-bold">{kpis[0].title}</p>
+            <p className="text-white font-normal text-base">{kpis[0].body}</p>
+          </div>
+          <div
+            className={`flex flex-col items-center justify-center border-0 lg:border-l border-white pl-8`}
+          >
+            <p className="text-white text-2xl font-bold">{kpis[1].title}</p>
+            <p className="text-white font-normal text-base">{kpis[1].body}</p>
+          </div>
+        </div>
+        <div className="flex gap-10 lg:border-l border-white">
+          <div
+            className={`flex flex-col items-center justify-center pl-5 lg:pl-10`}
+          >
+            <p className="text-white text-2xl font-bold">{kpis[2].title}</p>
+            <p className="text-white font-normal text-base">{kpis[2].body}</p>
+          </div>
+          <div
+            className={`flex flex-col items-center justify-center border-0 lg:border-l border-white pl-8`}
+          >
+            <p className="text-white text-2xl font-bold">{kpis[3].title}</p>
+            <p className="text-white font-normal text-base">{kpis[3].body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
   return (
     <section className="overflow-hidden relative">
       <div
@@ -35,6 +69,9 @@ const Hero = ({ res }: any) => {
             <Search size={20} />
           </button>
         </div>
+      </div>
+      <div className="mt-[-200px] relative h-auto sm:h-[140px] md:h-[180px] w-full flex sm:flex-row items-center justify-center gap-2 sm:gap-16 my-auto z-2 py-6 sm:py-0">
+        {generateKpiBody(res.metrics)}
       </div>
     </section>
   );

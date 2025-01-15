@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ReactMarkdown from "react-markdown";
 
 const FAQs = async () => {
   const FaqFetch = await fetch(`https://api.trekkingmate.com/api/faqs`);
@@ -36,8 +37,10 @@ const FAQs = async () => {
               <AccordionTrigger className="text-white font-semibold text-lg sm:text-xl">
                 {item.title}
               </AccordionTrigger>
-              <AccordionContent className="text-white/[.6] text-sm sm:text-base font-normal">
-                {item.description}
+              <AccordionContent>
+                <ReactMarkdown className="text-center sm:text-start whitespace-pre-wrap text-white">
+                  {item.description}
+                </ReactMarkdown>
               </AccordionContent>
             </AccordionItem>
           ))}

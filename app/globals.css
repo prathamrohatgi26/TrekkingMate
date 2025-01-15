@@ -73,6 +73,14 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  ol {
+    list-style: decimal;
+    padding-left: 2rem;
+  }
+  ul {
+    list-style: circle;
+    padding-left: 2rem;
+  }
 }
 
 @keyframes backgroundZoom {
